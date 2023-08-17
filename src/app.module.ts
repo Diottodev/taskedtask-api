@@ -7,7 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { ErrandsService } from './errands/errands.service';
-import { ErrandsController } from './errands/Errands.controller';
+import { ErrandsController } from './errands/errands.controller';
 import { ErrandsModule } from './errands/errands.module';
 
 @Module({
