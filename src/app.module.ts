@@ -9,10 +9,16 @@ import { AuthService } from './auth/auth.service';
 import { ErrandsService } from './errands/errands.service';
 import { ErrandsController } from './errands/errands.controller';
 import { ErrandsModule } from './errands/errands.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [ErrandsModule, UsersModule, AuthModule],
-  controllers: [ErrandsController, UsersController, AuthController],
+  controllers: [
+    AppController,
+    ErrandsController,
+    UsersController,
+    AuthController,
+  ],
   providers: [ErrandsService, PrismaService, UsersService, AuthService],
 })
 export class AppModule {}
