@@ -13,9 +13,11 @@ export class AuthService {
 
   async signIn(data: SignInDto) {
     const user = await this.usersService.findOneEmail(data.email);
+    if (!user) {
+      throw new UnauthorizedException('E-mail ou senha incorretos');
+    }
 
-    const isValidPassword = await bcrypt.compare(data.password, user?.password);
-
+    const isValidPassword = await bcrypt.compare(data.password, user.password);
     if (!isValidPassword) {
       throw new UnauthorizedException('E-mail ou senha incorretos');
     }
